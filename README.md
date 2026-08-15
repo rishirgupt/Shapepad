@@ -9,9 +9,10 @@ and author your own shapes.
 
 Built with **Tauri v2 + React + Vite + TypeScript + Tailwind CSS**.
 
-Built By: Rishi Gupta
-
 Vibecoded via Claude-code and is a competitor in LUMA Hackathon September 2026
+
+
+Built By: Rishi Gupta
 ---
 
 ## Download
