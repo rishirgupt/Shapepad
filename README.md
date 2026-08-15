@@ -9,6 +9,9 @@ and author your own shapes.
 
 Built with **Tauri v2 + React + Vite + TypeScript + Tailwind CSS**.
 
+vibecoded with ClaudeCode
+
+Created by: Rishi Gupta
 ---
 
 ## Download
