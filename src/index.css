@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Transparent window chrome.
+   The OS window is frameless + transparent; every ancestor of the
+   shaped container must be fully see-through or the clip-path effect
+   is hidden behind an opaque rectangle.
+   ------------------------------------------------------------------ */
+html,
+body,
+#root {
+  background-color: transparent !important;
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* Native-app feel: no text selection outside the editor */
+  user-select: none;
+  cursor: default;
+}
+
+/* Nothing should be draggable as an image/link */
+img,
+a {
+  -webkit-user-drag: none;
+}
+
+/* ------------------------------------------------------------------
+   CodeMirror integration.
+   The editor is layered over a user-chosen background colour, so it
+   must be transparent and inherit the computed contrast colour that
+   App.tsx sets on --sp-ink.
+   ------------------------------------------------------------------ */
+.sp-editor,
+.sp-editor .cm-editor,
+.sp-editor .cm-scroller,
+.sp-editor .cm-gutters {
+  background: transparent !important;
+}
+
+.sp-editor {
+  height: 100%;
+  user-select: text;
+}
+
+.sp-editor .cm-editor {
+  height: 100%;
+  font-size: var(--sp-font-size, 14px);
+  line-height: 1.55;
+}
+
+.sp-editor .cm-editor.cm-focused {
+  outline: none !important;
+}
+
+/* No vertical padding: `shapeInset` maps CodeMirror block coordinates
+   straight onto the shape outline, so any offset here would shear the
+   text away from the geometry it is supposed to follow. */
+.sp-editor .cm-scroller {
+  font-family: var(--sp-font, ui-monospace, Consolas, monospace);
+  padding: 0;
+}
+
+.sp-editor .cm-content {
+  color: var(--sp-ink, #f4f4f5);
+  caret-color: var(--sp-ink, #f4f4f5);
+  padding: 0;
+}
+
+/* Line margins are written by the shape-inset plugin; keep the default
+   horizontal padding out of the way so the maths stays exact. */
+.sp-editor .cm-line {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sp-editor .cm-cursor,
+.sp-editor .cm-dropCursor {
+  border-left-color: var(--sp-ink, #f4f4f5) !important;
+}
+
+.sp-editor .cm-gutters {
+  border: none !important;
+  color: var(--sp-ink-dim, rgba(244, 244, 245, 0.4));
+}
+
+.sp-editor .cm-activeLine,
+.sp-editor .cm-activeLineGutter {
+  background-color: var(--sp-ink-wash, rgba(255, 255, 255, 0.06)) !important;
+}
+
+.sp-editor .cm-selectionBackground,
+.sp-editor .cm-content ::selection,
+.sp-editor .cm-line ::selection {
+  background-color: var(--sp-ink-sel, rgba(125, 211, 252, 0.35)) !important;
+}
+
+.sp-editor .cm-placeholder {
+  color: var(--sp-ink-dim, rgba(244, 244, 245, 0.4));
+}
+
+/* Markdown syntax accents derived from the readable ink colour so text
+   stays legible against any background the user picks. */
+.sp-editor .cm-editor .ͼm,
+.sp-editor .tok-heading {
+  color: var(--sp-ink) !important;
+  font-weight: 700;
+}
+
+/* Slim scrollbars inside the shape */
+.sp-editor .cm-scroller::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.sp-editor .cm-scroller::-webkit-scrollbar-thumb {
+  background: var(--sp-ink-dim, rgba(255, 255, 255, 0.25));
+  border-radius: 999px;
+}
+.sp-editor .cm-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ------------------------------------------------------------------
+   react-colorful sizing overrides for the compact toolbar popovers.
+   ------------------------------------------------------------------ */
+.sp-picker .react-colorful {
+  width: 176px;
+  height: 148px;
+}
+.sp-picker .react-colorful__saturation {
+  border-radius: 8px 8px 0 0;
+}
+.sp-picker .react-colorful__hue {
+  height: 14px;
+}
+.sp-picker .react-colorful__last-control {
+  border-radius: 0 0 8px 8px;
+}
+.sp-picker .react-colorful__pointer {
+  width: 14px;
+  height: 14px;
+}
+
+/* Range inputs (opacity / brush size) */
+.sp-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  outline: none;
+}
+.sp-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 999px;
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}

@@ -1,0 +1,69 @@
+{
+  "version": 3,
+  "shape": "circle",
+  "windowWidth": 620,
+  "windowHeight": 620,
+  "customShapes": [
+    {
+      "id": "shape-badge",
+      "name": "Badge",
+      "authoredWidth": 420,
+      "authoredHeight": 460,
+      "points": [
+        { "x": 0.5, "y": 0.02 },
+        { "x": 0.68, "y": 0.2 },
+        { "x": 0.93, "y": 0.24 },
+        { "x": 0.93, "y": 0.62 },
+        { "x": 0.5, "y": 0.98 },
+        { "x": 0.07, "y": 0.62 },
+        { "x": 0.07, "y": 0.24 },
+        { "x": 0.32, "y": 0.2 }
+      ]
+    }
+  ],
+  "backgroundColor": "#134e4a",
+  "markerColor": "#facc15",
+  "markdownContent": "# Sprint notes\n\nThe notepad reflows to the outline, so this paragraph narrows toward the top and bottom of the circle.\n\n- [ ] retry with backoff\n- [x] log the 401 body",
+  "drawings": [
+    {
+      "points": [
+        { "x": 150, "y": 470 },
+        { "x": 190, "y": 452 },
+        { "x": 232, "y": 462 },
+        { "x": 268, "y": 478 },
+        { "x": 310, "y": 466 },
+        { "x": 352, "y": 442 },
+        { "x": 396, "y": 424 },
+        { "x": 440, "y": 402 }
+      ],
+      "color": "#facc15",
+      "brushSize": 5
+    }
+  ],
+  "images": [],
+  "textBoxes": [
+    {
+      "id": "text-demo",
+      "text": "Free text\nanywhere",
+      "x": 196,
+      "y": 116,
+      "width": 230,
+      "height": 78,
+      "rotation": -7,
+      "fontFamily": "ui-sans-serif, \"Segoe UI\", system-ui, Arial, sans-serif",
+      "fontSize": 30,
+      "color": "#fef3c7",
+      "bold": true,
+      "italic": false,
+      "align": "center",
+      "opacity": 1
+    }
+  ],
+  "backgroundOpacity": 0.9,
+  "brushSize": 5,
+  "fontFamily": "ui-sans-serif, \"Segoe UI\", system-ui, Arial, sans-serif",
+  "fontSize": 15,
+  "textColor": null,
+  "clickThrough": true,
+  "mode": "markdown"
+}
