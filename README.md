@@ -1,7 +1,7 @@
 # ShapePad
 
 A frameless, transparent, always-on-top desktop scratchpad that morphs into
-geometric shapes — including shapes with holes cut into them. Markdown text
+Geometric shapes — including shapes with holes cut into them. Markdown text
 **reflows to the outline**, clicks outside the shape **pass through to the
 apps behind**, and you can sketch (with optional Whiteboard-style ink
 correction), paste images, run multiple pads as **tabs or separate windows**,
@@ -9,6 +9,8 @@ and author your own shapes.
 
 Built with **Tauri v2 + React + Vite + TypeScript + Tailwind CSS**.
 
+Built By: Rishi Gupta
+Vibecoded via Claude-code and is a competitor in LUMA Hackathon September 2026
 ---
 
 ## Download
